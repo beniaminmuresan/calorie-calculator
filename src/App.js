@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 
 function App() {
 
-  const [quantity, setQuantity] = useState(0);
-  const [caloriesPer100, setCaloriesPer100] = useState(0);
-  const [count, setCount] = useState(0);
+  const [quantity, setQuantity] = useState(null);
+  const [caloriesPer100, setCaloriesPer100] = useState(null);
+  const [count, setCount] = useState(null);
 
   return (
     <div className="App" style={{paddingTop: '20em'}}>
@@ -16,7 +16,7 @@ function App() {
 
       <div className="field"> 
         <label>Calorii/100(g) </label>
-        <input type = "text" onChange = { (e) => setCaloriesPer100(e.target.value) } value={caloriesPer100} />
+        <input placeholder = "Calorii/100(g)" type = "text" onChange = { (e) => setCaloriesPer100(e.target.value) } value={caloriesPer100} />
       </div>
       <div className="field" style={{paddingTop: '20px'}}>
         <button onClick={() => setCount( quantity * caloriesPer100 / 100 )}> 
